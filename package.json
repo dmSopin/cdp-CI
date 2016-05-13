@@ -52,5 +52,8 @@
     "gulp-eslint": "^2.0.0",
     "gulp-stylelint": "^2.0.2",
     "plato": "^1.5.0"
+  },
+  "dependencies": {
+    "http-server": "^0.9.0"
   }
 }
