@@ -1,7 +1,17 @@
 language: node_js
 node_js:
-  - "5"
+- '5'
 before_script:
-  - npm install -g gulp
-
+- npm install -g gulp
 script: npm run build:prod
+
+branches:
+  only:
+    - deploy
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: I3IvGwMSMlrNC+Oejo6umU5f9lzB08AEK3zXINTqyi9R6SqimDbbTIVthwBkP+TvUhEbrJknUwo4AiE9AxarWMniJ/fdj7Ivz+toLiweE05E8ieyT3+fI5GToW9rStpBLGipW8zo23sn9lKwR63KyGIw/VPj/2YSVRsuE1AWz+nj7goTyDaagZkIUcD9n2dCWt75kSJ2JJX6IDd7p7tqJ3UutI5Naq3DMhAhVJUcY2/D2alNulD3ohyl9vWP2w3XsO+IXH8hw+3W/hrkzoD7joNQmutU9wIa/JXMMBe++vTxxSAdpRRO4FwGX3OHYEdCeVxuZVMq005ZesLQq2+qO4qial2SMFe4hESNjEIn627wLpNjZ6QArnjrnemmFtv16piFvSKwWcwowxijc/IMx4oDHxobrrtpxbr7uxKG9X53WYtIQsLzhCcdxryUQiT/jdU5KoA3Ms89hics5/OHXK6rnCWIU9uPNVte+hSULQ9TRUZy6HJpbs8SCIJeqx1SSckFDu/RHUXOHZalu2aTE3GjD+ELAebbDfP4m8M+WP43ClmMMDXSBwm+v2F96CQjLII+g2Icfmt6Z2+40yikrjpMbOghLcxf+cuj6AxxdNi5lmUn9drgomd1ZIVuno/giRa7EvbJg5oorOzdvJuqak7Lt51iVEZnLeyjTWmAbLY=
+  app: cdp-CI
+  on: deploy
