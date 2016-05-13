@@ -107,7 +107,7 @@ gulp.task('html', ['clean'], function () {
         .pipe(gulp.dest(conf.build.html));
 });
 
-gulp.task('script', ['clean'], function () {
+gulp.task('script', ['clean', 'bower'], function () {
     return browserify(
         {
             entries: './src/js/script.js',
